@@ -71,6 +71,14 @@ const app = createApp({
       this.message.text = text;
       this.message.type = type;
     },
+
+    doneTask(index) {
+      this.tasks[index].done = true;
+    },
+
+    refreshTask(index) {
+      this.tasks[index].done = false;
+    },
   },
 
   mounted() {},

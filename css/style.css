@@ -10,3 +10,7 @@ main {
 i {
   cursor: pointer;
 }
+
+.container {
+  height: 500px;
+}

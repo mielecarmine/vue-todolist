@@ -72,6 +72,7 @@
                   >
                     {{task.name}}
                     <i
+                      @click="doneTask(index)"
                       class="fa-solid fa-circle-check fa-lg text-success ms-5"
                     ></i>
                     <i
@@ -93,7 +94,8 @@
                   >
                     {{task.name}}
                     <i
-                      class="fa-solid fa-circle-check fa-lg text-success ms-5"
+                      @click="refreshTask(index)"
+                      class="fa-solid fa-arrows-rotate text-warning ms-5"
                     ></i>
                     <i
                       @click="removeTask(index)"
