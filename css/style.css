@@ -1,0 +1,12 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+main {
+  background-color: #f6f8f9;
+}
+
+i {
+  cursor: pointer;
+}
