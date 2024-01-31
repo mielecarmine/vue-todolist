@@ -34,9 +34,44 @@ const app = createApp({
         name: "",
         done: false,
       },
+
+      message: {
+        show: false,
+        text: "",
+        type: "",
+      },
     };
   },
-  methods: {},
+  methods: {
+    removeTask(index) {
+      this.tasks.splice(index, 1);
+    },
+
+    addNewTask() {
+      const newTaskCopy = { ...this.newTask };
+
+      if (newTaskCopy.name.length < 4) {
+        this.generateMessage("Inserisci almeno 5 caratteri", "danger");
+        this.newTask.name = "";
+      } else {
+        this.tasks.push(newTaskCopy);
+        this.newTask.name = "";
+        this.generateMessage("Task creata con successo", "success");
+      }
+    },
+
+    generateMessage(text, type) {
+      const acceptedTypes = ["danger", "success", "info", "warning"];
+
+      if (!acceptedTypes.includes(type)) {
+        type = "info";
+      }
+
+      this.message.show = true;
+      this.message.text = text;
+      this.message.type = type;
+    },
+  },
 
   mounted() {},
 }).mount("#app");
